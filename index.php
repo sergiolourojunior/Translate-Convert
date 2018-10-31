@@ -1,4 +1,4 @@
-<meta name="robots" content="noindex">
+<meta charset="utf-8">
 
 <?php
 
@@ -60,7 +60,7 @@ if(isset($_FILES['arquivo'])){
 
 function translate($lang='en',$text){
 	$return='';
-	$url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=pt&tl={$lang}&dt=t&q=".urlencode($text)."";
+	$url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl={$lang}&dt=t&q=".urlencode($text)."";
 	$content = file_get_contents($url);
 	$json = json_decode($content,true);
 	$translates = $json[0];
